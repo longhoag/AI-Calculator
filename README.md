@@ -11,4 +11,4 @@ npm run dev
 
 ## Note
 
-- If you clone from github, you will need to input your own API to test the program. Otherwise, the program will output error when testing.
+- If you clone from github, you will need to input your **own API** to test the program. Otherwise, the program will output error when testing.
