@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+// dependencies
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
@@ -11,7 +12,7 @@ const GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/
 async function evaluateExpression(expression) {
   try {
     const response = await axios.post(
-      `${GEMINI_API_URL}?key=${import.meta.env.VITE_API_KEY}`,
+      `${GEMINI_API_URL}?key=${import.meta.env.VITE_API_KEY}`, // API key in .env file
       {
         contents: [
           {
@@ -37,14 +38,6 @@ function App() {
   const [result, setResult] = useState(""); // Result to display
   const [loading, setLoading] = useState(false); // Loading state
 
-  const buttonClasses = "p-4 text-lg font-bold rounded-lg flex justify-center items-center";
-  const numberButton = "bg-gray-200 text-black hover:bg-gray-300";
-  const operatorButton = "bg-blue-500 text-white hover:bg-blue-600";
-  const functionButton = "bg-green-500 text-white hover:bg-green-600";
-  const specialButton = "bg-red-500 text-white hover:bg-red-600";
-  const equalButton = "bg-green-600 text-white hover:bg-green-700 col-span-4";
-
-
   // Handle button click for input values
   const handleClick = (value) => {
     setInput((prev) => prev + value);
@@ -67,7 +60,7 @@ function App() {
     setResult(result); // Update the UI with result
     setLoading(false); // Turn off loading
   };
-
+  // Main UI
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
       {/* Banner Title */}
